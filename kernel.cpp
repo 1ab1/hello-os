@@ -1,4 +1,5 @@
-# include "types.h"
+#include "types.h"
+#include "gdt.h"
 
 void printf(int8_t *str)
 {
@@ -23,5 +24,8 @@ extern "C" void callConstructors()
 extern "C" void kernelMain(void* multiboot_structure, uint32_t magicnumber)
 {
     printf("Hello OS 1.0!");
+
+    GlobalDescriptorTable gdt;
     while(1);
+
 }
